@@ -13,6 +13,7 @@ public class F1 extends Car {
             changeGear(1);
         }
         int newSpeed = rate + getCurrentSpeed() ; //set the value of new speed by using currentSpeed and rate
+        if(newSpeed == getCurrentSpeed()) return;
         /**
          * speed 0: gear 1
          * speed 1-50: gear 1
@@ -33,18 +34,18 @@ public class F1 extends Car {
 
         if(newSpeed > 0) {
             changeSpeed(newSpeed, getCurrentDirection());
-            if(newSpeed >= 1 && newSpeed<= 50 && getCurrentGear() != 1) {
+            if(newSpeed >= 1 && newSpeed<= 50) {
                 changeGear(1);
-            }else if(newSpeed >= 51 && newSpeed<= 100 && getCurrentGear() != 2){
+            }else if(newSpeed >= 51 && newSpeed<= 100){
                 changeGear(2);
-            }else if(newSpeed >= 101 && newSpeed<= 150 && getCurrentGear() != 3){
+            }else if(newSpeed >= 101 && newSpeed<= 150 ){
                 changeGear(3);
-            }else if(newSpeed >= 151 && newSpeed<= 200 && getCurrentGear() != 4){
+            }else if(newSpeed >= 151 && newSpeed<= 200){
                 changeGear(4);
-            }else if(newSpeed >= 201 && newSpeed<= 250 && getCurrentGear() != 5){
+            }else if(newSpeed >= 201 && newSpeed<= 250){
                 changeGear(5);
             }else{
-                if(getCurrentGear() != 6) changeGear(6);
+                 changeGear(6);
             }
         }
     }
