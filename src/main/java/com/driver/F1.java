@@ -8,7 +8,6 @@ public class F1 extends Car {
     }
 
     public void accelerate(int rate){
-        if(rate <= 0) return;
         int newSpeed = rate + getCurrentSpeed() ; //set the value of new speed by using currentSpeed and rate
         /**
          * speed 0: gear 1
